@@ -1,0 +1,846 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}	% Para caracteres en español
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{algpseudocode}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphbox}
+\graphicspath{ {figures/} }
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\newcommand{\indep}{\perp\!\!\!\!\perp} 
+\begin{document}
+\title{Report}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Large Sample Theory Exercises}\\
+\end{center}
+\tableofcontents
+\newpage
+\section{Convergence of Random Variables}
+1. (2022 Final) Prove or disprove (with a counter example): $X_n \rightarrow X$, completely implies $X_n^2 \rightarrow X^2$, almost surely.
+
+2. Suppose we have the following representation
+$$
+T_n=Z_n+R_n Q_n
+$$
+where $E\left(\left|R_n\right|\right) \rightarrow 0, \quad Q_n \xrightarrow{d} Q$, for some random variable $Q$, and $Z_n \xrightarrow{d} N(0,1)$. What will be the limiting distribution of $T_n^2$ ?
+
+3. Suppose $X_1, \cdots, X_n, \cdots$ be i.i.d. Uniform $(-1,1)$. Show from definition that $\bar{X}_n \rightarrow 0$ in $L_2$, where $\bar{X}_n=\frac{1}{n} \sum_{i=1}^n X_i$.
+
+4. Suppose $X_n=n^2 Y_n$, where $Y_n$ are defined on the same probability space such that $Y_n$ has a Bernoulli distribution with probability of success $1 / n^2$.
+
+(i) Show that $X_n$ converges to the 0 random variable, almost surely, as $n \rightarrow \infty$.
+
+(ii) Does $X_n$ converge to the 0 random variable in $L_1$ ?
+
+5. Suppose $X_n$ are defined on the same probability space and that
+
+$$
+\sum_{n=1}^{\infty} E\left(\left|X_n\right|^p\right)<\infty, \text { for some } p>0
+$$
+Show that
+
+(a) $X_n \rightarrow 0$, completely.
+
+(b) Is it true that $X_n \rightarrow 0$, in probability?
+
+(c) Is it true that $X_n \rightarrow 0$, in $L_1$, if $p \geq 1$ ?
+
+
+6. Prove or give counter examples.
+
+(1). If $X_n \rightarrow c$, in probability, then $X_n \rightarrow c$ in $L_1$.
+
+(2). If $X_n \rightarrow X$ in $L_1, Y_n \rightarrow c$ in probability then $X_n+Y_n \rightarrow X+c$ in $L_1$.
+
+(3). If $X_n \rightarrow X$ in $L_1, Y_n \rightarrow c$ in probability and $\left|Y_n\right| \leq 1$, for all $n$ with probability one, then $X_n+Y_n \rightarrow X+c$ in $L_1$.
+
+(4). If $E\left(X_n-Y_n\right)^2=O\left(n^{-2}\right)$ and $\sqrt{n}\left(X_n-c\right) \xrightarrow{d} N(0,5)$, then $Y_n \sim A N(c, 5 / n)$.
+
+7. Prove or disprove (with counter example):
+
+(a) $X_n \xrightarrow{P} X$ implies $X_n \rightarrow X$ completely.
+
+(b) $X_n \sim A N\left(\mu_n, 1 / n\right)$ implies $X_n \sim A N(0,1 / n)$, provided $\mu_n \rightarrow 0$.
+
+8. Suppose $X_i$ are iid with $E\left(X_i\right)=\mu, \operatorname{Var}\left(X_i\right)=1$.
+
+(i) What is the MSE of $\widehat{\mu}=\bar{X}$ ?
+
+(ii) Does $\widehat{\mu}$ converge to $\mu$ in $L_1$ ? Give arguments for your answer.
+
+(iii) What is $\operatorname{Var}_{J K}(\widehat{\mu})$ in this case?
+
+9. Ture or false? If you claim it to be true, give a short proof; otherwise, give a counter example.
+
+(a) If $\mathrm{E}\left(X_n\right)<\pi, \forall n$, then $X_n$ are uniformly integrable.
+
+(b) If $E\left(|X|+\left|X_n\right|\right)<\infty, \forall n$, and $E\left(\left|X-X_n\right|\right) \rightarrow 0$, as $n \rightarrow \infty$, then $X_n$ are uniformly integrable.
+
+10. TRUE or FALSE? Give short proofs or counter examples.
+
+(a) $\sum_{n=1}^{\infty} P\left(\left|X_n\right|>n^{-1}\right)<\infty$ and $\left|X_n\right| \leq 1$ with probability 1 together imply $E\left|X_n\right| \rightarrow 0$.
+
+(b) $\sum_{n=1}^{\infty} P\left(\left|X_n\right|>n^{-1}\right)<\infty$ implies $E\left|X_n\right| \rightarrow 0$.
+
+(c) $\hat{\theta}_n \sim A N\left(\theta, \sigma^2 / n\right)$ implies $E\left(\hat{\theta}_n\right)=\theta$ and $\operatorname{Var}\left(\hat{\theta}_n\right)=\sigma^2 / n$.
+
+11. Suppose $X_i \sim \operatorname{Bin}\left(1, p_i\right), i=1, \ldots, n$ are independent. Let $\widehat{p}=\frac{1}{n} \sum_{i=1}^n X_i$ and $\bar{p}=\frac{1}{n} \sum_{i=1}^n p_i$.
+
+(a) Show that $\widehat{p}-\bar{p} \xrightarrow{P} 0$ as $n \rightarrow \infty$. 
+
+(b) Show that if $\lim _{i \rightarrow \infty} p_i=p$, then $\widehat{p} \xrightarrow{P} p$, as $n \rightarrow \infty$.
+
+(c) Under the condition in (b), show that $\widehat{p} \xrightarrow{L_2} p$ also.
+
+12. For each of the following, state if the statement is true or false. If true, give a short proof, and if false, provide a counter example. You can use any result covered in class - just state the result you are using.
+
+(a) If $\sup _n \mathbb{E}\left(X_n^2\right)<\infty$ and $X_n \xrightarrow{P} 0$, then $\mathbb{E}\left(X_n\right) \rightarrow 0$.
+
+(b) A jackknife variance estimator is always consistent, i.e., the ratio of the jackknife variance estimator and the true variance converges almost surely to 1.
+
+(c) If $X_n^2 \xrightarrow{P} 0$ and $-1 \leq X_n<2$ for all $n$, then $X_n \rightarrow 0$, almost surely.
+
+13. True or False? If true give a short proof; if false, give a counter example.
+
+(a) $X_n \xrightarrow{L_1} X$ and $Y_n \xrightarrow{L_1} Y$ together implies $X_n Y_n \xrightarrow{L_1} X Y$.
+
+(b) $X_n \xrightarrow{L_2} X$ and $Y_n \xrightarrow{L_2} Y$ together implies $X_n Y_n \xrightarrow{L_1} X Y$.
+
+(c) $U_n$ and $V_n$ are the $U$ and $V$ statistics, respectively, based on the same kernel $h$. Then
+$$
+n U_n V_n \xrightarrow{d} c \chi_1^2
+$$
+for some constant $c$.
+
+14. Suppose $X_1, \cdots, X_n$ are i.i.d. with $0<\sigma^2=\operatorname{Var}\left(X_1\right)<\infty$. Suppose $\pi_i$ 's are i.i.d. taking values -1 and 1 with equal probabilities. Assume furthermore that the $X$ and the $\pi$ are independent. Show that $n^{-1} \sum_{i=1}^n \pi_i X_i \rightarrow 0$, in probability.
+
+15. Suppose $X_n \xrightarrow{d} X, Y_n \xrightarrow{d} Y$. Assume furthermore, $X_n$ and $Y_n$ are independent for each $n$. Prove that $X_n+Y_n \xrightarrow{d} W$, for some $W$. Identify/characterize $W$.
+
+16. Suppose $X_n=X+\frac{R_n}{n}$, for $n \geq 1$, where $R_n$ has a distribution function
+
+$$
+F_{R_n}(x)= \begin{cases}0, & \text { for } x<0 \\ (1-c) x, & \text { for } 0 \leq x<1 \\ 1-\frac{c}{x^2}, & \text { for } x \geq 1\end{cases}
+$$
+
+for some $0<c<1$.
+Show that $X_n \rightarrow X$, almost surely.
+
+17. True or False? Provide arguments supporting your answer:
+$$
+\text { If } \sum_{n=1}^{\infty} \mathbb{E}\left(\hat{\theta}_n-\theta\right)^2<\infty, \quad \text { then } \quad \operatorname{Bias}\left(\hat{\theta}_n\right) \rightarrow 0 .
+$$
+
+18. Prove or disprove (with a counterexample):
+
+(a) If $\operatorname{Bias}(\hat{\theta}) \rightarrow 0$ and $\operatorname{Var}(\hat{\theta}) \rightarrow 0$, then $\hat{\theta}$ is weakly consistent; i.e. $\hat{\theta} \xrightarrow{P} \theta$.
+
+(b) If $\operatorname{Bias}(\hat{\theta}) \rightarrow 0$ and
+$$
+\sum_{n=1}^{\infty}\{\operatorname{Bias}(\hat{\theta})+\operatorname{Var}(\hat{\theta})\}<\infty,
+$$
+where $n$ is the sample size, then $\hat{\theta}$ is strongly consistent; i.e. $\hat{\theta} \xrightarrow{\text { a.s. }} \theta$.
+
+19. (2026 Exam 1) Consider i.i.d. data $X_1, \cdots, X_n$ from a parametric model $P_\theta: \theta \in \Re$. Suppose we have a regular (don't worry about the exact meaning of regular) estimator of $\theta$ with influence function $I F_{\widehat{\theta}}\left(X_i\right)=g\left(X_i, \theta\right)$, say.
+
+(a) What does it mean (as stated in class)?
+
+(b) Suppose $E\left(\widehat{\theta}^2\right)<\infty$, for all $n$, and $\sup _n E\left(r_n^{2+\delta}\right)<\infty$, for some $\delta>0$, where
+$$
+r_n=\sqrt{n}(\hat{\theta}-\theta)-\frac{1}{\sqrt{n}} \sum_{i=1}^n g^c\left(X_i, \theta\right) .
+$$
+
+(i) Show that $\operatorname{Var}\left(r_n\right) \rightarrow 0$, and
+
+(ii) $\frac{\operatorname{Var}(\widehat{\theta})}{\frac{1}{n^2} \sum_{i=1}^n\left\{g^c\left(X_i, \theta\right)\right\}^2} \xrightarrow{p} 1$, and hence $\operatorname{Var}(\widehat{\theta})$ can be estimated by $\frac{1}{n^2} \sum_{i=1}^n\left\{g^c\left(X_i, \widehat{\theta}\right)\right\}^2$.
+
+20. (2026 HW2) Ture or False? Give arguments or a counter example for your answer.
+
+Suppose $X_1, \cdots, X_n$ are i.i.d. such that $E\left(X_1\right)=1, \mathrm{E}\left(X_1^2\right)=3$ and $E(X_1^4)<\infty$
+
+Then $\frac{X_1+X_2+\cdots+X_{\mathrm{n}}}{n} \xrightarrow{c} 1$.
+
+21. (2026 HW2) Ture or False? Give arguments or a counter example for your answer.
+
+Suppose $X_n \geq 0$ with probability one, $\forall n, X_n \xrightarrow{P} 0$, and $\limsup _{n \rightarrow \infty} E\left(X_n^2\right)<\infty$. Then $E\left(X_n\right) \rightarrow 0$, as $n \rightarrow \infty$.
+
+22. (2026 HW2) Suppose $X_i$ are i.i.d. with $\mu=E\left(X_i\right), \sigma^2:=\operatorname{var}\left(X_i\right) \in(0, \infty)$.
+
+Let $\bar{X}_n=\left(X_1+X_2+\cdots+X_n\right) / n$,
+$$
+\sigma_n^2=\frac{1}{n} \sum_{i=1}^n\left(X_i-\bar{X}_n\right)^2 \text { and } s_n^2=\frac{1}{n-1} \sum_{i=1}^n\left(X_i-\bar{X}_n\right)^2 .
+$$
+Show that
+$$
+\sqrt{n}\left(\bar{X}_n-\mu\right) / s_n=\sqrt{n}\left(\bar{X}_n-\mu\right) / \sigma_n+\mathrm{o}_p(1) .
+$$
+
+23. (2026 Final) Suppose $X_n \xrightarrow{d} X, Y_n \xrightarrow{d} Y$. Furthermore, suppose, $X_n$ and $Y_n$ are independent for each $n$.
+
+(a) Show that $X_n+Y_n \xrightarrow{d} X^*+Y^*$, where $X^* \stackrel{d}{=} X, Y^* \stackrel{d}{=} Y$, and $X^*$ and $Y^*$ are independent. (Hint: You may use a characteristic function argument)
+
+(b) In particular if $X^* \sim N\left(a, \sigma^2\right), Y^* \sim N\left(b, \tau^2\right)$ then $X_n+Y_n \xrightarrow{d} N\left(a+b, \sigma^2+\tau^2\right)$.
+
+24. (2025 Final) Suppose $X_i$ are iid with a symmetric and continuous distribution function $F$. Let, for any $x \in \Re$,
+$$
+F_n(x)=\frac{1}{n} \sum_{i=1}^n I\left(X_i \leq x\right)
+$$
+be the proportion of data values that are less than or equal to $x$. Note that $F_n$ is also called the empirical cdf.
+
+(i) Ture or False? $F_n(0) \rightarrow 0.5$, almost surely. Give arguments in support of your answer.
+
+(ii) Ture or False? $F_n(0) \rightarrow 0.5$, in $L_1$. Give arguments in support of your answer.
+
+(iii) Establish the joint asymptotic normality of $\left(F_n(0), \widehat{\xi}_{1 / 2}\right)$, where $\widehat{\xi}_{1 / 2}$ is the sample median.
+
+State your assumptions on $F$ for the validity of your answer.
+
+\newpage
+
+\section{Asymptotic Normality and MLE}
+1. Consider $X_1, \cdots, X_n$ i.i.d. from a distribution $F$ and $Y_1, \cdots, Y_n$ i.i.d. from a distribution $G$. Furthermore, the $X$ s are independent of the $Y$ s. Suppose
+$$
+s_1^2=\frac{1}{n-1} \sum_{i=1}^n\left(X_i-\bar{X}\right)^2 ; s_2^2=\frac{1}{n-1} \sum_{i=1}^n\left(Y_i-\bar{Y}\right)^2 .
+$$
+Establish the asymptotic normality of $s_1^2 / s_2^2$.
+
+2. Consider a location family $f_\theta(x)=f(x-\theta), \theta \in \Re$, where $f$ is a given density which is symmetric around 0 . Consider estimating $\theta$ by solving an estimating equation of the form
+
+$$
+\sum_{i=1}^n \mathrm{w}_i \psi\left(X_i-\theta\right)=0
+$$
+
+where $\mathrm{w}_i$ are known weights.
+
+(a) What should we assume about $\psi$ so that the above estimating equation will lead to an unbiased estimator? 
+
+(b) Find an expression for an asymptotic confidence interval for $\theta$ based on such an estimator $\widehat{\theta}$.
+
+3. Consider i.i.d. data $X_1, \cdots, X_n$ and the following robust measure of the coefficient of variation
+$$
+\widehat{\theta}=\frac{\widehat{\tau}}{M},
+$$
+where
+$$
+\widehat{\tau}=\frac{1}{n^2} \sum_{i=1}^n \sum_{j=1}^n\left|X_i-X_j\right|
+$$
+and $M$ is the sample median.
+Construct a variance estimator for $\widehat{\theta}$ using each of the following methods
+
+(a) the large sample theory techniques (influence function delta method etc)
+
+(b) the jackknife
+
+(c) the bootstrap
+
+Which one is not likely to work?
+
+4. If $\widehat{\theta}$ is an asymptotically normal estimator of $\theta$ with influence function $A_i= A\left(X_i, \theta\right)$, and $g$ is a smooth function, what will be the influence functions of 
+
+(i) $g(\widehat{\theta})$ 
+
+(ii) $\widehat{\theta} \cdot g(\widehat{\theta})$
+
+5. Let $X_1, \cdots, X_n$ be i.i.d., with density $f_\theta(x)=\theta^{-1} \exp \{-x / \theta\}, x>0$. Under what condition on the function $\gamma$, the following estimating function $\psi(X, \theta)=\gamma(X / \theta)-1$ be unbiased for zero? Give an example of such a $\gamma$. Write down the asymptotic distribution of $\widehat{\theta}$ obtained from the estimating equation
+$$
+\sum_{i=1}^n\{\gamma(X / \theta)-1\}=0
+$$
+
+for a general $\gamma$ satisfying the condition.
+
+6. Suppose $X_1, \cdots, X_n$ are i.i.d. $N\left(\mu, \sigma^2\right)$. Find the asymptotic distribution of
+$$
+\widehat{\theta}=\frac{\bar{X}+\widehat{\xi}_{1 / 2}}{2},
+$$
+where $\bar{X}$ is the sample mean and $\widehat{\xi}_{1 / 2}$ is the sample median.
+
+7. Consider a linear regression model $Y_i=\beta^T X_i+\epsilon_i, 1 \leq i \leq n, \beta \in \Re^p$, where $\epsilon_i \sim i . i . d . N(0,1)$, and are independent of the $X_i$ (in case the covariates are random). Consider estimating the regression parameters $\beta$ by estimating equations of the form
+$$
+\sum_{i=1}^n \psi\left(Y_i-\beta^T X_i\right) X_i=0
+$$
+Under what condition on the $\psi$, will you get a set of unbiased estimating equations? For such a $\psi$ find the asymptotic distribution of the resulting estimators and obtain its estimated variance covariance matrix.
+
+
+8. Consider a location family $f_\theta(x)=f(x-\theta), \theta \in \Re$, where $f$ is a given density which is symmetric around 0 . Consider estimating $\theta$ by solving an estimating equation of the form
+
+$$
+\sum_{i=1}^n \psi\left(X_i-\theta\right)=0,
+$$
+(a) What should we assume about $\psi$ so that the above estimating equation will lead to an unbiased estimator?
+
+(b) Consider two such estimators $\widehat{\theta}_1$ and $\widehat{\theta}_2$ corresponding to two different $\psi$, say, $\psi_1$ and $\psi_2$. Find them joint asymptotic distribution of $\left(\widehat{\theta}_1, \widehat{\theta}_2\right)$.
+[Hint: Work with their influence functions]
+
+9. Prove or disprove (with a counter example): If $\hat{\theta}_1$ and $\hat{\theta}_2$ are asymptotically normal with influence functions $A_1^C\left(X_i\right)$ and $A_2^C\left(X_i\right)$, respectively, then $\widehat{\theta}_1 \widehat{\theta}_2$ is asymptotically normal with IF $\theta_1 A_2^c\left(X_i\right)+\theta_2 A_1^c\left(X_i\right)$
+
+10. Let for $0<p<1, \xi_p=F^{-1}(p)$, be the population $p^{t h}$ quantile, where we assume that $F$ is differentiable at $\xi_p$ with $F^{\prime}\left(\xi_p\right)>0$. In fact assume that $F^{\prime}=f$, where $f$ is the (Lebesgue) density of $F$. As stated in class,
+$$
+\widehat{\xi}_p-\xi_p=-\frac{F_n\left(\xi_p\right)-p}{f\left(\xi_p\right)}+o_p\left(\frac{1}{\sqrt{n}}\right),
+$$
+where $\widehat{\xi}_p=\inf \left\{t: F_n(t) \geq p\right\}$ is the sample $\mathrm{p}^{t h}$ quantile.
+
+(a) Show that
+$$
+\sqrt{n}\left\{\widehat{\sigma}_n-s\right\}=o_p(1),
+$$
+where
+$$
+\widehat{\sigma}_n=\sqrt{\frac{1}{n} \sum\left(X_i-\bar{X}\right)^2} \text { and } s=\sqrt{\frac{1}{n-1} \sum\left(X_i-\bar{X}\right)^2}
+$$
+(b) Work out the joint asymptotic distribution of $\left(s, \widehat{\xi}_{3 / 4}-\widehat{\xi}_{1 / 4}\right)$.
+
+(c) Work on your answer when $F=N\left(\mu, \sigma^2\right)$.
+
+11. Suppose $\left(X_i, Y_i\right)$ are i.i.d. pairs from a bivariate normal distribution such that $\operatorname{corr}\left(X_i, Y_i\right)=\rho$, Find the asymptotic distribution of $\tanh ^{-1}(\widehat{\rho})$, where
+$$
+\widehat{\rho}=\frac{\sum_{i=1}^n\left(X_i-\bar{X}\right) Y_i}{\sqrt{\left(\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right)\left(\sum_{i=1}^n\left(Y_i-\bar{Y}\right)^2\right)}} .
+$$
+How to get $\tanh^{-1} (\hat\rho)$
+
+12. Consider solving the likelihood score equation $S_n(\theta)=0$. Suppose $\widehat{\theta}_c$ is any consistent estimator. The 1-step MLE is defined as
+$$
+\widehat{\theta}_{1, M L E}=\widehat{\theta}_c-\frac{S_n\left(\widehat{\theta}_c\right)}{S_n^{\prime}\left(\widehat{\theta}_c\right)}
+$$
+Show that $\widehat{\theta}_{1, M L E} \sim \operatorname{AN}\left(\theta_0, n^{-1} I^{-1}\left(\theta_0\right)\right)$. In other words, the 1 -step MLE has the same asymptotic distribution as the MLE.
+
+
+13.Consider a simple linear regression model with zero intercept: $Y_i=\beta x_i+\epsilon_i$, where $x_i$ are observed covariates and $\epsilon_i$ are i.i.d. error terms. Let's assume that $\epsilon_i$ have a symmetric distribution.
+
+Consider estimating the regression parameter $\beta$ using an estimating equation of the form
+$$
+\sum_{i=1}^n \psi\left(Y_i-\beta x_i\right) x_i=0 .
+$$
+(i) Show that the estimating function used here is unbiased (for zero) under a simple condition on $\psi$ (state the condition).
+
+(ii) Find the asymptotic distribution of $\widehat{\beta}$ including variance estimation.
+
+(iii) Specialize to the case the of the least squares estiumator of $\beta$.
+
+14. Consider a location family $f_\theta(x)=f(x-\theta), \theta \in \Re$, where $f$ is a given density which is symmetric around 0 . Consider estimating $\theta$ by solving an estimating equation of the form
+$$
+\sum_{i=1}^n \mathrm{w}_i \psi\left(X_i-\theta\right)=0
+$$
+where $w_i$ are known weights. What should we assume about $\psi$ so that the above estimating equation will lead to an unbiased estimator? Find an expression for an asymptotic confidence interval for $\theta$ based on such an estimator $\widehat{\theta}$.
+
+15. Consider a linear regression model $Y_i=\alpha+\beta X_i+\epsilon_i$, where $X_i$ and $\epsilon_i$ are i.i.d., $\left\{\epsilon_i\right\}$ and $\left\{X_i\right\}$ are independent. In addition assume that $\epsilon_i$ has a finite second moment and a symmetric density. Consider estimating $\theta=(\alpha, \beta)$ using the following estimating equation
+$$
+\sum_{i=1}^n \psi\left(Y_i-\alpha-\beta X_i\right) \boldsymbol{Z}_i=\mathbf{0},
+$$
+where $\boldsymbol{Z}_i=\left(1, X_i\right)^T$.
+
+(a) Under what condition on $\psi$, will this estimating equation be unbiased?
+
+(b) Write down the corresponding asymptotic distribution of $\widehat{\theta}$.
+
+(c) Construct an estimator of the asymptotic variance-covariance matrix of $\widehat{\theta}$.
+
+(d) How will you construct a joint confidence set for $(\alpha, \beta)$ using the large sample distribution?
+
+16. Consider data from a simple linear regression without an intercept term, $Y_i=\beta x_i+\epsilon_i$, where $x_i$ are known design constants and $\epsilon_i \sim N(0,1)$ are error terms. Note we are assuming that the error variance is known.
+
+a. Write down the estimating equation for the MLE of the underlying parameter $\beta$.
+
+b. What is the asymptotic distribution of the MLE of $\beta$ ? What condition do you need on the $\left\{x_i\right\}$ for your answer? How will you estimate the asymptotic variance?
+
+c. Find the asymptotic distribution of an $M$-estimator of $\beta$ obtained from the following estimating equation:
+$$
+\sum_{i=1}^n x_i \psi\left(Y_i-\beta x_i\right)=0
+$$
+where $\psi$ is an odd bounded function so that $E\left[\psi\left(\epsilon_i\right)\right]=0$.
+
+d. How will your answer change if $\epsilon_i$ are double exponentially distributed?
+
+17. Suppose $X-\mu$ and $-(X-\mu)$ have the same distributions. Obtain the asymptotic distribution of $\widehat{\mu}=\left(\bar{X}+\widehat{\xi}_{0.5}\right) / 2$, where $\widehat{\xi}_{0.5}$ is the sample median.
+
+
+18. Consider IID data $X_i, 1 \leq i \leq n$, with density
+$$
+f_\theta(x)=\frac{1}{2 \theta} e^{-|x / \theta|}, x \in \Re, \theta>0 .
+$$
+Consider estimating $\theta$ by solving an estimating equation
+$$
+\sum_{i=1}^n\left\{\psi\left(X_i / \theta\right)-1\right\}=0
+$$
+(i) What condition do you need $\psi$ to satisfy for consistency? 
+
+(ii) Find the asymptotic distribution of the corresponding $\widehat{\theta}$. Simplify your answer as much as possible.
+
+19. Suppose $\widehat{\theta}$ is consistent solution of an estimating equation of the form
+$$
+\sum_{i=1}^n s\left(X_i, \theta\right)=0 .
+$$
+(a) What is the influence function of $\widehat{\theta}$ ? (You don't need to give a detailed proof.)
+
+(b) What is the influence function of $(\widehat{\theta})^2$ as an estimator of $\theta^2$ ?
+
+20. Consider data from a regression model $Y_i= \beta x_i+\epsilon_i$, where $x_i$ is non-random and $\epsilon_i \stackrel{\text { i.i.d. }}{\sim} \operatorname{Normal}\left(0, \sigma^2\right)$.
+
+(a) Find the asymptotic distribution of the MLE of $\hat{\beta}$.
+
+(b) Find the asymptotic distribution of a robust estimator of $\beta$ obtained by solving the estimating equation $\sum_{i=1}^n \psi\left(Y_i-\beta x_i\right) x_i=0$, where $\psi$ is a bounded and symmetric function. Construct its variance estimator.
+
+21. Let $X_i, i \geq 1$, be a sequence of i.i.d. random variable and
+$$
+s^2=\frac{1}{n-1} \sum_{i=1}^n\left(X_i-\bar{X}\right)^2
+$$
+be the sample variance based on the first $n$ observations.
+Find the asymptotic distribution of $s^2$ in two ways: 
+
+(i) using delta method
+
+(ii) using projection arguments for U-statistics. Show sufficient details.
+
+22. (a) Find the influence function of the sample variance $s^2=(n-1)^{-1} \sum_{i=1}^n\left(X_i-\bar{X}\right)^2$ in two ways: 
+
+(i) using the $\Delta$ method, 
+
+(ii) using $U$-statistic techniques.
+
+(b) What is the asymptotic variance of $\sqrt{n} s^2$ ?
+
+23. Consider response $Y_i=\alpha+\beta x_i+\epsilon_i$, where $x_i$ are non-random and $\epsilon_i$ are i.i.d. with $E\left(\epsilon_i\right)=0$.
+
+(a) Write down the least squares estimating equations.
+
+(b) Establish the asymptotic joint normality of your estimators.
+
+(c) Describe how you perform a bootstrap resampling in this situation.
+
+24. (a) Write down the score equations for a logistic regression based on independent samples. 
+
+(b) Obtain the asymptotic distribution of the MLE of the regression parameters and 
+
+(c) an asymptotic $95 \%$ confidence interval for each of the regression parameters.
+Calculate (c) for the following artificial data example.
+
+\begin{tabular}{|l|l|l|}
+\hline Response & Covariate $Z_1$ & Covariate $Z_2$ \\
+\hline 0 & 3 & 1.73 \\
+\hline 0 & 3 & 2.54 \\
+\hline 1 & 2 & 2.20 \\
+\hline 0 & 5 & 1.31 \\
+\hline 1 & -1 & 5.40 \\
+\hline 0 & 4 & -2.61 \\
+\hline 0 & 7 & -1.10 \\
+\hline 1 & -5 & 2.12 \\
+\hline 1 & 0 & 1.85 \\
+\hline
+\end{tabular}
+
+25. Let $X_1, \cdots, X_n$ be i.i.d., with density $f_\theta(x)=\theta^{-1} \exp \{-x / \theta\}, x>0$. Under what condition on the function $\gamma$, the following estimating function $\psi(X, \theta)=\gamma(X / \theta)-1$ be unbiased for zero? Give an example of such a $\gamma$. Write down the asymptotic distribution of $\widehat{\theta}$ obtained from the estimating equation
+$$
+\sum_{i=1}^n\{\gamma(X / \theta)-1\}=0
+$$
+for a general $\gamma$ satisfying the condition.
+
+26. Consider a simple linear regression model with zero intercept: $Y_i=\beta x_i+\epsilon_i$, where $x_i$ are observed covariates and $\epsilon_i$ are i.i.d. error terms. Let's assume that $\epsilon_i$ have a symmetric distribution.
+
+Consider estimating the regression parameter $\beta$ using an estimating equation of the form
+$$
+\sum_{i=1}^n \psi\left(Y_i-\beta x_i\right) x_i=0 .
+$$
+(i) What condition do you impose on $\psi$ so that this equation has a consistent root?
+
+(ii) Show that the least squares estimator is a special case of this.
+
+(iii) Find the asymptotic distribution of the corresponding estimator $\widehat{\beta}$ for a general $\psi$.
+
+(iv) Compute the asymptotic variance (time n ) for three choices of the $\psi$ function and compare.
+
+(v) What happens if the distribution of $\epsilon_i$ is $\mathrm{N}(0,1)$ ? Does it make sense? Also could you have obtained the asymptotic distribution of $\widehat{\beta}$ when $\psi(x)=x$, using any other result you know?
+
+27. Let for $0<p<1, \xi_p=F^{-1}(p)$, be the population $p^{t h}$ quantile, where we assume that $F$ is differentiable at $\xi_p$ with $F^{\prime}\left(\xi_p\right)>0$. In fact assume that $F^{\prime}=f$, where $f$ is the (Lebesgue) density of $F$. As stated in class,
+$$
+\widehat{\xi}_p-\xi_p=-\frac{F_n\left(\xi_p\right)-p}{f\left(\xi_p\right)}+o_p\left(\frac{1}{\sqrt{n}}\right),
+$$
+where $\widehat{\xi}_p=\inf \left\{t: F_n(t) \geq p\right\}$ is the sample $\mathrm{p}^{t h}$ quantile.
+Work out the asymptotic distribution of $H / I$, where $I:=\widehat{\xi}_{3 / 4}-\widehat{\xi}_{1 / 4}$ and $2 H=\widehat{\xi}_{3 / 4}+\widehat{\xi}_{1 / 4}$ when $F$ is $N(1,1)$. Note that $H / I$ is a robust measure of the coefficient of variation.
+
+28.
+$$
+\begin{aligned}
+&\text { Establish the joint asymptotic normality of }\\
+&\left(\frac{\hat{\xi}_{1 / 4}+\hat{\xi}_{3 / 4}}{2}, \quad \frac{\hat{\xi}_{1 / 4}-\hat{\xi}_{3 / 4}}{2}\right), \quad \text { where } \hat{\xi}_p=\inf \left\{x: F_n(x) \geq p\right\}, 0<p<1 .
+\end{aligned}
+$$
+
+29. Consider $X_1, \ldots, X_n$ i.i.d. from a distribution $F=F_0$ with a location parameter $\theta$.
+
+(a) What does " $F=F_0$ with a location parameter $\theta$ " mean, mathematically?
+
+(b) Suppose $\hat{\theta}_1=\xi_{1 / 2}$ is the sample median and $\hat{\theta}_2$ is another estimator of the location parameter obtained by solving
+$$
+\sum_{i=1}^n \psi\left(X_i-\hat{\theta}_2\right)=0 .
+$$
+Find the joint asymptotic distribution of $\left(\hat{\theta}_1, \hat{\theta}_2\right)$ under appropriate regularity conditions (state them as you see fit).
+
+30. (2026 HW3) 
+
+(a) Find the limiting distribution of the sample co-efficient of variation
+$$
+\widehat{\theta}=\frac{s}{\bar{X}} .
+$$
+
+(b) What is its influence function?
+
+31. (2026 HW3) Find the joint asymptotic distribution of the sample mean and the sample median.
+
+32. (2026 HW3) Find the joint asymptotic distribution of the sample first quartile and the sample third quartile.
+
+33. (2026 HW3) Consider i.i.d. sample $X_1, \cdots, X_n$ from $N(\theta, 1)$. Suppose $\widehat{\theta}_1$ is an $M$-estimator obtained as a solution of the estimating equation
+$$
+\Sigma_{i=1}^n \psi\left(X_i-\theta\right)=0,
+$$
+with $\psi(u)=\tanh (u)$. Suppose $\widehat{\theta}_2$ is the MLE.
+Find out the asymptotic joint distribution of ($\widehat{\theta}_1, \widehat{\theta}_2$) and obtain an estimator of the asymptotic variance-covariance matrix.
+
+34. (2026 Exam 1) Consider binatry data (response) $X_i$ with associated covariate $Z_i, i \leq i \leq n$. We posit a logistic regression model of the form
+$$
+\operatorname{logit}\left(X_i=1\right)=\beta Z_i / i, 1 \leq i \leq n \text {. }
+$$
+(a) Write down the likelihood function for the parameter $\beta$.
+
+(b) Write down the likelihood-based score equation.
+
+(c) Obtain the asymptotic distribution of $\widehat{\beta}$, a consistent solution of the score equation (detailed proofs are not needed; however you should identify the quantities in the asymptotic distribution)
+
+(d) Construct a 95\% large sample confidence interval for $\beta$.
+
+35. (2026 Final) Consider a regression model for your response
+$$
+Y_i=\alpha+\beta x_i+\epsilon_{i},\quad 1 \leq i \leq n,
+$$
+where $x_i$ are non-random design co-variates. Consider estimating the regression parameters $\theta=(\alpha, \beta)$ using a bivariate estimating equation
+where
+$$
+\begin{aligned}
+& S_n(\theta)_{2 \times 1}=0_{2 \times 1} \\
+& S_n(\theta):=\sum_{i=1}^n s_i(\theta)_{2 \times 1}=\sum_{i=1}^n\binom{\psi\left(Y_i-\alpha-\beta x_i\right)}{\psi\left(Y_i-\alpha-\beta x_i\right) x_i}_{2 \times 1}
+\end{aligned}
+$$
+Suppose $\psi$ is an odd function and $\epsilon_i$ has a symmetric (around 0 ) distribution.
+
+(a) Show that $s_i(\theta)$ has mean 0 (vector), under the true $\theta$.
+
+(b) Using the arguments/results provided in class obtain the asymptotic distribution of $\widehat{\theta}$.
+
+Simplify your answer as much as possible. Write down any condition you need on the design values $x_i$.
+
+(c) Estimate the asymptotic variance-covariance matrix of $\hat{\theta}$.
+
+\newpage
+
+\section{U-statistics}
+1. Consider i.i.d. $X_1, \cdots, X_n$ from a common distribution $F$, with $\int x^2 d F<\infty$.
+(a) Show that
+$$
+\widehat{\sigma}_n^2:=\frac{1}{n} \sum_{i=1}^n\left(X_i-\bar{X}\right)^2
+$$
+is a $V$-statistics
+
+(b) Using the projection result for $U / V$ statistics, obtain the asymptotic distribution of $\widehat{\sigma}_n^2$
+
+2. Suppose we have binary response $Y_i$ (0 or 1) and a single cavariate $Z_i, 1 \leq i \leq n$. Suppose, we fit a logistic regression model of the form
+$$
+\operatorname{logit}\left(\operatorname{Pr}\left\{Y_i=1 \mid Z_i\right\}\right)=\beta \mathrm{Z}_i, 1 \leq i \leq n .
+$$
+Write down the score test for $H_0: \beta=0$ against $H_1: \beta \neq 0$.
+
+3. Find a kernel $h$ that $E h=\mu_4$, the forth central moment. Find the asymptotic distribution of the corresponding U-statistic and write down the formula for an approximate (large sample) confidence interval for $\mu_4$.
+
+4. Suppose $X_i, 1 \leq i \leq n_1$, and $Y_j, 1 \leq j \leq n_2$ sample from two independent populations with CDFs, $F$ and $G$, respectively. Compute the asymptotic distribution of the test statistic based on a two-sample U-statistic with kernel
+$$
+h\left(X_i, Y_j\right)=I\left(Y_j>X_i\right),
+$$
+under the null hypothesis $H_0: F=G$.
+What is the name of this test?
+
+5. Consider samples $X_1, \cdots, X_{n_1}$ and $Y_1, \cdots, Y_{n_2}$ from two independent populations. Consider the two-sample U-statistic corresponding to the kernel
+$$
+h\left(X_1, \cdots, X_{m_1} ; Y_1, \cdots, Y_{m_2}\right)=h^1\left(X_1, \cdots, X_{m_1}\right) h^2\left(Y_1, \cdots, Y_{m_2}\right) .
+$$
+where $h^1$ and $h^2$ are kernels of orders $m_1$ and $m_2$, respectively. Find its asymptotic distribution.
+
+6. Consider i.i.d. $X_1, \cdots, X_n$ from a common distribution with mean $\mu$ and variance $\sigma^2$. Let $V$ be a V-statistic for estimating $\mu^2$ and $U$ be a U-statistic for estimating $\sigma^2$.
+
+(i) Write down $V$ and $U$ in terms of $X_1, \cdots, X_n$. Are they unbiased for the respective parameters?
+
+(ii) Obtain the joint asymptotic distribution of $(V, U)$.
+
+(iii) Discuss how you will obtain an approximate joint confidence set for $\left(\mu^2, \sigma^2\right)$.\
+
+
+7. Find the U-statistics $U_1$ and $U_2$ that are unbiased for $\sigma^2$ and $\mu_3$, respectively. Obtain the joint asymptotic distribution of $\left(U_1, U_2\right)$.
+
+8. Consider two independent samples $\left\{X_1, \cdots, X_n\right\}$ and $\left\{Y_1, \cdots, Y_m\right\}$ distributed $F$ and $G$, respectively (assume both $F$ and $G$ are continuous). Work out the asymptotic null distribution of the test statistic
+$$
+\frac{1}{n m} \sum_{i=1}^n \sum_{j=1}^m I\left(X_i<Y_j\right)
+$$
+under $H_0: F=G$.
+
+9. Suppose $h^{1}$ and $h^{2}$ are two kernels of orders $p$ and $q$, respectively. Consider two independent samples $\left\{X_{1}, \cdots, X_{n}\right\}$ and $\left\{Y_{1}, \cdots, Y_{m}\right\}$ distributed $F$ and $G$, respectively.
+$$
+\text { Let } E_{F} h^{1}\left(X_{1}, \cdots, X_{p}\right)=\eta \text { and } E_{\mathrm{G}} h^{2}\left(Y_{1}, \cdots, Y_{q}\right)=\kappa \text {. }
+$$
+(i) Obtain the asymptotic distribution of a two-sample $U$ statistic with kernel
+$$
+\mathcal{H}\left(X_{1}, \cdots, X_{p} ; Y_{1}, \cdots, Y_{q}\right)=\sqrt{h^{1}\left(X_{1}, \cdots, X_{p}\right) \cdot h^{2}\left(Y_{1}, \cdots, Y_{q}\right)}
+$$
+(ii) Suppose $\eta=\sigma_{F}^{2}$ and $\kappa=\sigma_{G}^{2}$. Find a consistent estimator of $\sigma_{F} \sigma_{G}$ and obtain its asymptotic distribution.
+
+10. Consider two independent, i.i.d. samples $\left\{X_{11}, \cdots, X_{1 n_1}\right\}$ and $\left\{X_{21}, \cdots\right.$, $\left.X_{2 n_2}\right\}$ from two populations. Let $U_1$ and $U_2$ be two U-statistics based on each of these samples with kernels $h^{(1)}$ and $h^{(2)}$, respectively. Find the large sample distribution of the statistic $T=g\left(U_1, U_2\right)$, where $g$ is a smooth function. Show the detailed steps and write down the condition on $n_1$ and $n_2$ for the result.
+
+11. Suppose $T_1$ is a U-statistic based on a kernel $h_1$ and $T_2$ is a V-statistic with kernel $h_2$.
+
+(a) What is the influence function of the ratio $T_2 / T_1$?
+
+(b) Using (2a), obtain the asymptotic normality of
+$$
+\frac{\bar{X}^2}{s^2}, \quad \text { where } s^2=(n-1)^{-1} \sum_{i=1}^n\left(X_i-\bar{X}\right)^2 .
+$$
+
+12. Find the influence function of the sample variance
+$$
+s^2=(n-1)^{-1} \sum_{i=1}^n\left(X_i-\bar{X}\right)^2
+$$
+in two ways:
+(i) using the $\Delta$-method,
+(ii) using U-statistic techniques.
+(b) What is the asymptotic variance of $\sqrt{n} s^2$?
+
+13. Find two kernels $h_1$ and $h_2$ which are unbiased for the population variance $\sigma^2$ and the third central moment $\mu_3$, respectively. Let $U_1$ and $U_2$ denote the corresponding U-statistics.
+
+(a) Obtain the asymptotic distribution of
+$$
+\frac{U_2}{\sqrt{U_1}} .
+$$
+(b) Construct a large-sample confidence interval for $\mu_3 / \sigma$.
+
+14. Suppose
+$$
+U_1=U_1\left(X_{11}, \ldots, X_{1 n_1}\right) \quad \text { and } \quad U_2=U_2\left(X_{21}, \ldots, X_{2 n_2}\right)
+$$
+are U-statistics of orders $m_1$ and $m_2$, respectively, based on independent samples $\left\{X_{11}, \ldots, X_{1 n_1}\right\}$ and $\left\{X_{21}, \ldots, X_{2 n_2}\right\}$. Suppose $\theta_2=\mathbb{E}\left[U_2\left(X_{21}, \ldots, X_{2 n_2}\right)\right] \neq 0$. Consider the two-sample statistic
+$$
+R=\frac{U_1}{U_2} .
+$$
+(a) Find the asymptotic distribution of $R$ and indicate how you will estimate its asymptotic variance (no jackknife or bootstrap please)
+
+(b) Apply the general result in (a) to obtain the asymptotic distribution of
+$$
+\frac{s_1^2}{s_2^2}, \quad \text { where } s_k^2 \text { is the sample variance of the } k \text { th sample, } k=1,2 \text {. }
+$$
+(c) Write down an asymptotic linear representation for $R$.
+
+15. Consider a one-sample U-statistic
+$$
+U=\frac{2}{n(n-1)} \sum_{1 \leq i<j \leq n} I\left(X_i+X_j>0\right) .
+$$
+Find the asymptotic distribution of $U$ under the assumption that the $X_i$ have a symmetric distribution (i.e. $X_i \stackrel{d}{=}-X_i$ ).
+
+16. Consider i.i.d. bivariate pairs $Z_i=\left(X_i, Y_i\right), 1 \leq i \leq n$. Consider the $U$-statistic
+$$
+U=\frac{1}{\binom{n}{2}} \sum_{i<j} \operatorname{sgn}\left(X_i-X_j\right) \operatorname{sgn}\left(Y_i-Y_j\right),
+$$
+where $\operatorname{sgn}(x)=-1,0,1$, for $x<0,=0,>0$.
+
+(i) What is the name of this U-statistic?
+
+(ii) Find the asymptotic distribution of $U$, under the null hypothesis $H_0: X_i$ and $Y_i$ are independent.
+
+17. Suppose $X_i$ 's are i.i.d, $1 \leq i \leq n$,
+$$
+V_n=\frac{1}{n^m} \sum_{i_1=1}^n \sum_{i_2=1}^n \cdots \sum_{i_m=1}^n h\left(X_{i_1}, \cdots, X_{i_m}\right)
+$$
+be a $V$-statistic based on a symmetric and positive kernel $h$, and
+$$
+\theta=E h\left(X_1, \cdots, X_m\right), 0<E h^2\left(X_1, \cdots, X_m\right)<\infty .
+$$
+Let $g:(0, \infty) \rightarrow(0, \infty)$ be a smooth function.
+
+(a) What will be the influence function of $g\left(V_n\right)$ as an estimator of $g(\theta)$ ? Give arguments for your answer.
+
+(b) Apply your answer in part (a) to find the influence function $I F\left(X_i\right)$ of
+$$
+\widehat{\sigma}_n=\sqrt{\frac{1}{n} \sum_{i=1}^n\left(X_i-\bar{X}\right)^2}
+$$
+(c) How will you estimate the population quantities appearing in $I F\left(X_i\right)$ to obtain an estimated influence function, say, $\widehat{F}\left(X_i\right)$?
+
+(d) Using $\widehat{F}\left(X_i\right)$ 's, construct a large sample $95 \%$ confidence interval for $\sigma$.
+
+18. (2026 Exam 2) Consider IID binary data $X_1, \cdots, X_n$ with $p=\operatorname{Pr}\left\{X_1=0\right\}$.
+A natural estimator of $p$ is $\widehat{p}=n^{-1} \sum_{i=1}^n I\left(X_i=0\right)$ and its asymptotic variance is $p(1-p) / n$. 
+
+Express $\widehat{p}(1-\widehat{p})$ as a $U$ or $V$ statistic (show details) and obtain its asymptotic distribution.
+
+19. (2026 Exam 2) Suppose we have independent samples 
+$$
+\left\{X_{11}, \cdots, X_{1 n_1}\right\},\left\{X_{21}, \cdots, X_{2 n_2}\right\},\left\{X_{31}, \cdots, X_{3 n_3}\right\}
+$$ 
+from 3 populations with means $\mu_1, \mu_2, \mu_3$, respectively.
+
+A natural estimator of $\theta=\mu_1 \times \mu_2 \times \mu_3$ is $\widehat{\theta}:=\bar{X}_1 \times \bar{X}_2 \times \bar{X}_3$,, the product of the 3 sample means.
+
+(a) $\widehat{\theta}$ is both a multi-sample $U$ and a multi-sample $V$ statistic. True or False?
+
+(b) Obtain the asymptotic distribution of $\widehat{\theta}$. Try to use the notations used in class and show the necessary steps/calculations. Also, provide the conditions on the sample sizes for the normal limit to hold.
+
+20. (2026 HW5) Find U-statistics $U_1$ and $U_2$ that are unbiased for $\mu$ and $\sigma^2$, respectively. Obtain the asymptotic distribution of $\sqrt{U_2} / U_1$. What is this quantity called in statistics?
+
+21. (2026 HW5) Suppose $h^1$ and $h^2$ are two kernels of orders $p$ and $q$, respectively. Consider two independent samples $\left\{X_1, \cdots, X_n\right\}$ and $\left\{Y_1, \cdots, Y_m\right\}$ distributed $F$ and $G$, respectively.
+$$
+\text { Let } E_F h^1\left(X_1, \cdots, X_p\right)=\eta \text { and } E_{\mathrm{G}} h^2\left(Y_1, \cdots, Y_q\right)=\kappa \text {. }
+$$
+(i) Obtain the asymptotic distribution of a two-sample $U$ statistic with kernel
+$$
+\mathcal{H}\left(X_1, \cdots, X_p ; Y_1, \cdots, Y_q\right)=\sqrt{h^1\left(X_1, \cdots, X_p\right) \cdot h^2\left(Y_1, \cdots, Y_q\right)} .
+$$
+(ii) Suppose $\eta=\sigma_F^2$ and $\kappa=\sigma_G^2$. Find a consistent estimator of $\sigma_F \sigma_G$ and obtain its asymptotic distribution.
+
+22. (2026 HW5). Consider two independent samples $\left\{X_1, \cdots, X_n\right\}$ and $\left\{Y_1, \cdots, Y_m\right\}$ distributed $F$ and $G$, respectively (assume both $F$ and $G$ are continuous). Work out the asymptotic null distribution of the test statistic
+
+$$
+\frac{1}{n m} \sum_{i=1}^n \sum_{j=1}^m I\left(X_i<Y_j\right)
+$$
+
+under $H_0: F=G$. What is the name of this test?
+
+23. (2026 Final) (a) Consider a 2-sample U-statistic with a general kernel $h$ satistying the usual symmetry and finite second moment assumptions
+$$
+U=\frac{1}{\binom{n_1}{m_1}\binom{n_2}{m_2}} \sum_{1 \leq i_1 \cdots<i_{m_1} \leq n_1} \sum_{1 \leq j_1 \cdots<j_{m_2} \leq n_2} h\left(X_{1 i_1}, \cdots, X_{1 i_{m_1}} ; X_{2 j_1}, \cdots, X_{2 j_{m_2}}\right) .
+$$
+Suppose $\min \left(n_1, n_2\right) \rightarrow \infty$, such that $n_1 / N \rightarrow \alpha, N=n_1+n_2$.
+Assuming the following linear approximation
+$$
+U^c=\frac{m_1}{n_1} \sum_{i=1}^{n_1} h_{11}^c\left(X_{1 i}\right)+\frac{m_2}{n_2} \sum_{j=1}^{n_2} h_{21}^c\left(X_{2 j}\right)+o_p\left(N^{-1 / 2}\right),
+$$
+find the asymptotic distribution of $U$.
+
+(b) Work out your answer in (a) for the statistic
+$$
+\frac{1}{n_1 n_2} \sum_{i=1}^{n_1} \sum_{j=1}^{n_2} I\left(X_{1 i}+X_{2 j}>0\right),
+$$
+expressing your calculations in terms of $F$ and $G$, the CDFs of $X_{1 i}$ and $X_{2 j}$, respectively.
+
+24. (2025 Final) Suppose $X_i$ 's are i.i.d, $1 \leq i \leq n$,
+$$
+V_n=\frac{1}{n^m} \sum_{i_1=1}^n \sum_{i_2=1}^n \cdots \sum_{i_m=1}^n h\left(X_{i_1}, \cdots, X_{i_m}\right)
+$$
+be a $V$-statistic based on a symmetric and positive kernel $h$, and
+$$
+\theta=E h\left(X_1, \cdots, X_m\right), 0<E h^2\left(X_1, \cdots, X_m\right)<\infty .
+$$
+Let $g:(0, \infty) \rightarrow(0, \infty)$ be a smooth function.
+
+(a) What will be the influence function of $g\left(V_n\right)$ as an estimator of $g(\theta)$ ? Give arguments for your answer.
+
+(b) Apply your answer in part (a) to find the influence function IF $\left(X_i\right)$ of
+$$
+\widehat{\sigma}_n=\sqrt{\frac{1}{n} \sum_{i=1}^n\left(X_i-\bar{X}\right)^2}
+$$
+
+(c) How will you estimate the population quantities appearing in $I F\left(X_i\right)$ to obtain an estimated influence function, say, $\widehat{F}\left(X_i\right)$?
+
+(d) Using $\widehat{F}\left(X_i\right)$ 's, construct a large sample $95 \%$ confidence interval for $\sigma$.
+
+\newpage
+\section{Jackknife and Bootstrap}
+1. Consider a random sample $\{1,3,4\}$ from a population. Suppose we want to estimate the population median by the sample median (use any acceptable definition; just write down which version you are using).
+
+(a) Compute the jackknife pseudo values.
+
+(b) Compute a variance estimate of the sample median using the jackknife.
+
+2. Generate data with various sample sizes $(n=30,200,500)$ from two different distributions. In each setting, simulate 1000 data sets. For each data set, obtain the following
+
+(ii) Estimated variance of $\widehat{\xi}_{1 / 2}$ using the jackknife.
+
+3. Consider i.i.d. data $X_1, \cdots, X_n$ and the following robust measure of the coefficient of variation
+$$
+\widehat{\theta}=\frac{\widehat{\tau}}{M},
+$$
+where
+$$
+\widehat{\tau}=\frac{1}{n^2} \sum_{i=1}^n \sum_{j=1}^n\left|X_i-X_j\right|
+$$
+and $M$ is the sample median.
+Construct a variance estimator for $\widehat{\theta}$ using each of the following methods
+
+(a) the large sample theory techniques (influence function delta method etc)
+
+(b) the jackknife
+
+(c) the bootstrap
+
+Which one is not likely to work?
+
+4. Consider independent samples $X_{11}, \cdots, X_{1 n_1}$ and $X_{21}, \cdots, X_{2 n_2}$ from two populations $F$ and $G$. Let $\widehat{\theta}_{n_1, n_2}=\widehat{\theta}\left(X_{11}, \cdots, X_{1 n_1} ; X_{21}, \cdots, X_{2 n_2}\right)$ be an estimator of some population parameter $\theta=\theta(F, G)$. Propose a Jackknife bias corrected version of $\widehat{\theta}$.
+
+
+5. Suppose $n=3$ and $\widehat{\theta}_{-1}=-1, \widehat{\theta}_{-2}=0, \widehat{\theta}_{-3}=1$. Computh the jackknife estimate of the variance of $\widehat{\theta}$ using Efron's formula.
+
+
+6. How should we use jackknife in a two sample problem, such as with a two sample U-statistic? Write down your thoughts
+
+7. Write down two formulas for the jackknife estimator of variance of a statistic and prove their equality.
+
+8. Suppose $\theta$ is an estimator based on i.i.d. data $X_1, \cdots, X_n$. Describe how vou will construct a bootstrap estimator of the density of $\widehat{\theta}$.
+
+9. Consider a coin toss experiment leading to $X=0$ or 1 , according to whether the coin shows a tail or a head. Suppose $n=3, X_1=1, X_2=0$, and $X_3=0$. Consider the standard bootstrap resampling procedure. Obtain the following:
+
+(i) $P^*\left\{X_2^*=1\right\}$, and
+
+(ii) $E^*\left(\overline{X^*}\right)$.
+
+Note: These will be exact answers. Do not give a Monte Carlo algorithm.
+
+10. Consider a $V$-statistic $T$ based on a kernel $h$ of degree $m$.
+
+(a) Write down the asymptotic linear representation for $T$.
+
+(b) Suppose the remainder term in this approximation can be ignored. Obtain an estimate for the variance of $T$ using the jackknife principle of the main term.
+
+11. (2026 Final) Consider a sample of size 5 . Suppose the following values were obtained:
+$$
+\widehat{\theta}_{-1}=3, \widehat{\theta}_{-2}=3, \widehat{\theta}_{-3}=0, \widehat{\theta}_{-4}=1, \widehat{\theta}_{-5}=1 .
+$$
+Compute the jacknife estimate of the variance of $\widehat{\theta}$ for the same sample.
+\end{document}
